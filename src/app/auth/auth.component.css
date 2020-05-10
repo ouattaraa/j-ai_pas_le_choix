@@ -1,0 +1,40 @@
+form{
+    width: 700px;
+    margin-left: 80px;
+    margin-top: 130px;
+    height: 700px;
+}
+
+.container-fluid{
+    width: 900px;
+    background: olive;
+    height: 600px;
+    margin-top: 50px;
+}
+
+input{
+    font-size: 25px;
+}
+label{
+    font-size: 30px;
+}
+.head{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.btn{
+    background-color: yellow;
+    font-weight: bold;
+    font-family: fantasy;
+    color: black;
+    font-size: 25px;
+}
+
+.btn:hover{
+    background-color: orange;
+    font-size: 30px;
+    border-radius: 2px;
+    border: solid 1 px;
+    transition: ease-in 1s;
+}

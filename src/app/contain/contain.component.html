@@ -1,0 +1,32 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+
+
+    <div class="heading">
+    <h1 style="background: black;">WECLOME VUE QUE TU ES RESPONSABLE.DONC CLIQUES SUR LA FLECHE POUR DECOUVRIR CE QUE J'AVAIS EN COEUR.</h1>
+    </div>
+
+    <div class="contain">
+        <div
+            class="contain-heading"
+            [class.expanded]="isExpanded"
+            (click)="toggle()">
+            {{ title }}
+            <span class="glyphicon"
+                 [ngClass]="{
+                     'glyphicon-chevron-up':isExpanded,
+                     'glyphicon-chevron-down':!isExpanded
+                 }"
+            >
+            </span>
+        </div>
+            <div 
+            [@expandCollapse]="isExpanded ? 'expanded' : 'collapsed' "
+            class="contain-body">
+                <ng-content></ng-content>
+            </div>
+    </div>
+   

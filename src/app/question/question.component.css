@@ -1,0 +1,35 @@
+form{
+    width: 600px;
+}
+
+.container {
+    text-align: center;
+    background-color: yellowgreen;
+}
+h4{
+    color: yellow;
+    font-size: 35px;
+}
+.alert{
+    color: red;
+    font-size: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+li{
+    font-size: medium;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 1px;
+    text-decoration: none;
+    list-style: none;
+}
+li:hover{
+    list-style: none;
+    background: orange;
+    font-size: 40px;
+    font-family: fantasy;
+    transition: ease-in-out 1s;
+    transition: ease-in 1s;
+    text-decoration: none;
+}

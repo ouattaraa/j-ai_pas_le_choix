@@ -1,0 +1,49 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">    
+
+
+<div class="container">
+    <h1>WELCOME PAIGE!</h1>
+
+    <div class="question">
+    
+        <h1>Sommes nous au Matin ou Soir ?</h1>
+    
+        <mat-radio-group>
+            <mat-radio-button #matin value="0">Matin</mat-radio-button>
+            <mat-radio-button #soir value="1">Soir</mat-radio-button>
+        </mat-radio-group>
+    
+        <div *ngIf="matin.checked"><h2>Bonjour Alors Paige!</h2></div>
+        <div *ngIf="soir.checked"><h2> Paige Bonsoir !</h2></div>
+        
+        <div *ngIf="matin.checked || soir.checked">
+            <h2 >Es-tu prête à lire tout ce qui suivra?</h2>
+            
+          <mat-radio-group>
+            <mat-radio-button  #oui [value]="0">Oui</mat-radio-button>
+            <mat-radio-button #non [value]="1">Non</mat-radio-button>
+    
+          </mat-radio-group>
+          <div *ngIf="oui.checked">
+             <h4>
+                Très bien,meçi bien. <br>
+                Enfin C'est le jour que tu comprendras beaucoup sur mon secret,lol. <br>
+                c'est pas un secret...........  
+             </h4> 
+          </div>
+          <div  *ngIf="non.checked" class="alert alert-danger">Dommage alors,tu ne vas pas donc découvrir .....</div>
+    
+         <div *ngIf="oui.checked">
+            <h1 >Alors Maintenant comme tu veux le savoir,cliquez sur le lien ci-dessous.</h1>
+            <li routerLinkActive="active"><a routerLink="/contain-message">Message</a></li>
+         </div>
+    
+        </div>
+       
+    
+    
+    </div>
+</div>

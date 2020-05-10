@@ -1,0 +1,45 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+<div class="head">
+    <h1>VEUILLEZ S'AUTHENTIFIER D'ABORD</h1>
+</div>
+<div class="container-fluid">
+                
+        
+    <form [formGroup]="form">
+        <div *ngIf="status===false" class="alert alert-danger">{{error}}</div>
+
+        <div class="col-sm-12 form-group">
+            <label for="email" >Email</label>
+                <input matInput type="text"  formControlName="email" id="email" placeholder="introduit email suivant: dihia@gmail.com" 
+                    class="form-control" >
+
+        <div *ngIf="email.touched && email.invalid" class="alert alert-danger">
+            <div *ngIf="email.errors.required">Email is required.</div>
+            <div *ngIf="email.errors.minlength">Email shoul be {{ email.errors.minlength.requiredLength}} characters!</div>
+            <div *ngIf="email.errors.maxlength">Email does not pass {{ email.errors.maxlength.requiredLength}} characters .</div>
+       
+        </div>
+        </div>
+ 
+        <div class="col-sm-12 form-group">
+            <label for="password" >Password</label>
+                <input type="password" formControlName="password" id="password" 
+                    placeholder="introduit le password suivant: paige.1999" class="form-control" >
+               <div *ngIf="password.touched && password.invalid" class="alert alert-danger">
+                 <div *ngIf="password.errors.required">Password is required.</div>
+                 <div *ngIf="password.errors.minlength">Password should be {{ password.errors.minlength.requiredLength}} characters!</div>
+                 <div *ngIf="password.errors.maxlength">Password does not pass {{ password.errors.maxlength.requiredLength}} characters .</div>
+             </div>
+        </div>
+
+        <div>
+            <button class="btn btn-primary btn-lg" (click)="onSignIn()">Sign in</button>
+        </div>
+
+    </form>
+   
+</div>
